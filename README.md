@@ -1,7 +1,7 @@
 
 ## Bing wallpaper
 
-A Bing wallpaper python program<br>
+A bing wallpaper download python program<br>
 
 #### Without arguments
 Just run the program it will download bing wallpapers to bingwallpaper file<br>

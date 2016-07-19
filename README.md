@@ -1,11 +1,10 @@
+Python
+======
+### Why
 
-## Bing wallpaper
+* I want to do something that javascript can't help me to do
+* I have heard of python a lot
 
-A bing wallpaper download python program<br>
+### How
 
-#### Without arguments
-Just run the program it will download bing wallpapers to bingwallpaper file<br>
-
-#### With arguments
-Usage  : bing.py -path -market<br>
-market : [cn, us, gb, au, nz, ca, jp, fr]<br>
+* My first teacher [Google's Python Class](https://developers.google.com/edu/python/)

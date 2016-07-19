@@ -1,8 +1,6 @@
 
 # Author Dosin
 # Github https://github.com/dosin
-# Created this file after studying https://developers.google.com/edu/python/
-# Before that I know nothing about python
 # Some rights reserved
 
 import sys
@@ -52,40 +50,38 @@ def download_to(market, path):
     found += 1
     print 'Found ' + url
 
-    name = re.search(r'rb\/([a-zA-Z0-9]+)_', url).group(1)
-    abspath = path + name + '.jpg'
+    filename = re.search(r'rb\/([a-zA-Z0-9]+)_', url).group(1) + '.jpg'
+    abspath = os.path.join(path, filename)
 
-    # if image does not exist, download it
+    # if image exists, skip, if doesn't, download it
     if os.path.exists(abspath):
       existed += 1
       print 'Image existed'
     else:
       downloaded += 1
-      print 'Downloading ' + name
+      print 'Downloading ' + filename
       urllib.urlretrieve(url, abspath)
       
 
 def main():
-
-  print '\nPress "Ctrl" + "C" to exit...\n'
 
   # get markets from http://www.istartedsomething.com/bingimages/
   markets = ['zh-cn', 'en-us', 'en-gb', 'en-au', 'en-nz', 'en-ca', 'ja-jp', 'fr-fr']
 
   args = sys.argv[1:]
 
-  # if no extra arguments download all to bing file
+  # if no extra arguments download all to bing folder
   if not args:
     for market in markets:
-      download_to(market, 'bingwallpaper/')
+      download_to(market, 'bing')
 
   # if arguments exist than usage is below
   if args and len(args) < 2:
     print '\nusage  : bing.py -path -market'
-    print 'market : [cn, us, gb, au, nz, ca, jp, fr]'
+    print 'market : [cn, us, gb, au, nz, ca, jp, fr, all]'
     sys.exit(1)
 
-  path = args[0][1:] + '/'
+  path = args[0][1:]
 
   if args[1] == '-cn':
     download_to(markets[0], path)
@@ -118,6 +114,10 @@ def main():
   if args[1] == '-fr':
     download_to(markets[7], path)
     sys.exit(1)
+
+  if args[1] == '-all':
+    for market in markets:
+      download_to(market, path)
 
 if __name__ == '__main__':
   main()

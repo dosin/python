@@ -11,5 +11,5 @@ Google Chrome Downloader
 ```python
 chrome.py platform version [path]
 platform : win32/win64/mac
- version : stable/beta/dev/canary
+version  : stable/beta/dev/canary
 ```

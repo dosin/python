@@ -44,9 +44,9 @@ def download(platform, version, path):
 def main():
   args = sys.argv[1:]
   if not args or len(args) != 2:
-    print '\n   usage : chrome.py platform version [path]'
+    print '\nusage    : chrome.py platform version [path]'
     print 'platform : win32/win64/mac'
-    print ' version : stable/beta/dev/canary'
+    print 'version  : stable/beta/dev/canary'
     sys.exit(1)
   if args[0] not in 'win32/win64/mac':
     print 'only support win32/win64/mac platform'

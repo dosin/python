@@ -22,7 +22,7 @@ def get_url(platform, version):
     'mac_dev' : 'https://dl.google.com/chrome/mac/dev/GoogleChrome.dmg',
     'mac_canary' : 'https://dl.google.com/release2/q/canary/googlechrome.dmg'
   }
-  return chrome['%s _ %s' % (platform, version)]
+  return chrome['%s_%s' % (platform, version)]
 
 def report(a, b, c):
   percent = 100.0 * a * b / c

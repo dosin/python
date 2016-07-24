@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Github https://github.com/dosin
+# Some rights reserved
+__author__ = 'dosin'
 
 import sys
 import re
